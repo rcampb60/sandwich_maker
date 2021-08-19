@@ -26,22 +26,22 @@ if cheese.lower() == 'yes':
 print(f'£{price}')
 
 mayo = pyinputplus.inputYesNo('Do you want mayo? ')
-if mayo.lower() == 'Yes':
+if mayo.lower() == 'yes':
     price += prices['mustard']
 print(f'£{price}')
 
 mustard = pyinputplus.inputYesNo('Do you want mustard? ')
-if mustard.lower() == 'Yes':
+if mustard.lower() == 'yes':
     price += prices['mustard']
 print(f'£{price}')
 
 lettuce = pyinputplus.inputYesNo('Do you want lettuce? ')
-if lettuce.lower() == 'Yes':
+if lettuce.lower() == 'yes':
     price += prices['lettuce']
 print(f'£{price}')
 
 tomato = pyinputplus.inputYesNo('Do you want tomato? ')
-if tomato.lower() == 'Yes':
+if tomato.lower() == 'yes':
     price += prices['tomato']
 print(f'£{price}')
 

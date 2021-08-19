@@ -1,6 +1,5 @@
 import pyinputplus
 
-
 prices = {'wheat': 0.5, 'white': 0, 'sourdough': 1, 'chicken': 2, 'turkey': 2.5, 'ham': 3, 'tofu': 2, 'cheddar': 0.5, 'swiss': 2, 'mozzarella': 1, 'mayo': 0.5, 'mustard': 0.5, 'lettuce': 1, 'tomato': 1}
 price = 0
 

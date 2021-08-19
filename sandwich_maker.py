@@ -6,46 +6,62 @@ price = 0
 
 print('Hello, welcome to the Sandwich Maker program. Please follow instructions.')
 
-print('Please select your bread')
-bread = pyinputplus.inputMenu(['wheat', 'white', 'sourdough'])
-price += prices[bread]
+def bread(money, prices):
+    print('Please select your bread')
+    bread = pyinputplus.inputMenu(['wheat', 'white', 'sourdough'])
+    money += prices[bread]
+    return money
+
+price = bread(price, prices)
+print(price)
+    
+def protein(price, prices):
+    print('Please select your protein ')
+    protein = pyinputplus.inputMenu(['chicken','turkey', 'ham', 'tofu'])
+    price += prices[protein]
+    return price
+
+price = protein(price, prices)
 print(f'£{price}')
 
-print('Please select your protein ')
-protein = pyinputplus.inputMenu(['chicken','turkey', 'ham', 'tofu'])
-price += prices[protein]
+def cheese(price, prices):
+    
+    prompt = 'Do you want cheese? '
+    cheese = pyinputplus.inputYesNo(prompt)
+    if cheese.lower() == 'yes':
+        cheese_type = pyinputplus.inputMenu(['cheddar','swiss','mozzarella'])
+        price += prices[cheese_type]
+        return price
+
+price = cheese(price, prices)        
 print(f'£{price}')
 
+def condiments(price, prices):
+    
+    mayo = pyinputplus.inputYesNo('Do you want mayo? ')
+    if mayo.lower() == 'yes':
+        price += prices['mustard']
+    print(f'£{price}')
+    
+    mustard = pyinputplus.inputYesNo('Do you want mustard? ')
+    if mustard.lower() == 'yes':
+        price += prices['mustard']
+    print(f'£{price}')
 
-prompt = 'Do you want cheese? '
-cheese = pyinputplus.inputYesNo(prompt)
+    lettuce = pyinputplus.inputYesNo('Do you want lettuce? ')
+    if lettuce.lower() == 'yes':
+        price += prices['lettuce']
+    
+    print(f'£{price}')
 
-if cheese.lower() == 'yes':
-    cheese_type = pyinputplus.inputMenu(['cheddar','swiss','mozzarella'])
-    price += prices[cheese_type]
-print(f'£{price}')
+    tomato = pyinputplus.inputYesNo('Do you want tomato? ')
+    if tomato.lower() == 'yes':
+        price += prices['tomato']
+    print(f'£{price}')
+    return price
 
-mayo = pyinputplus.inputYesNo('Do you want mayo? ')
-if mayo.lower() == 'yes':
-    price += prices['mustard']
-print(f'£{price}')
+price = condiments(price,prices)
 
-mustard = pyinputplus.inputYesNo('Do you want mustard? ')
-if mustard.lower() == 'yes':
-    price += prices['mustard']
-print(f'£{price}')
-
-lettuce = pyinputplus.inputYesNo('Do you want lettuce? ')
-if lettuce.lower() == 'yes':
-    price += prices['lettuce']
-print(f'£{price}')
-
-tomato = pyinputplus.inputYesNo('Do you want tomato? ')
-if tomato.lower() == 'yes':
-    price += prices['tomato']
-print(f'£{price}')
-
-amount_prompt = 'How many sandwiches do you want? '
-amount = pyinputplus.inputInt(amount_prompt)
+amount = pyinputplus.inputInt('How many sandwiches would you like? ')
 price = price * amount
 print(f'Your total comes to: £{price}')

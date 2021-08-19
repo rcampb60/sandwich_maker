@@ -17,31 +17,31 @@ price += prices[protein]
 print(f'£{price}')
 
 
-prompt = ('Do you want cheese? ')
+prompt = 'Do you want cheese? '
 cheese = pyinputplus.inputYesNo(prompt)
 
-if cheese == 'yes' or cheese == 'Yes':
+if cheese.lower() == 'yes':
     cheese_type = pyinputplus.inputMenu(['cheddar','swiss','mozzarella'])
     price += prices[cheese_type]
 print(f'£{price}')
 
 mayo = pyinputplus.inputYesNo('Do you want mayo? ')
-if mayo == 'Yes' or mayo == 'yes':
+if mayo.lower() == 'Yes':
     price += prices['mustard']
 print(f'£{price}')
 
 mustard = pyinputplus.inputYesNo('Do you want mustard? ')
-if mustard == 'Yes' or mustard == 'yes':
+if mustard.lower() == 'Yes':
     price += prices['mustard']
 print(f'£{price}')
 
 lettuce = pyinputplus.inputYesNo('Do you want lettuce? ')
-if lettuce == 'Yes' or lettuce == 'yes':
+if lettuce.lower() == 'Yes':
     price += prices['lettuce']
 print(f'£{price}')
 
 tomato = pyinputplus.inputYesNo('Do you want tomato? ')
-if tomato == 'Yes' or tomato == 'yes':
+if tomato.lower() == 'Yes':
     price += prices['tomato']
 print(f'£{price}')
 
